@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <header>NodeJS Installation</header>
+        <ul>
+            <li><a href="#How_to_Install" class="nav-link">How to Install</a></li>
+            <li><a href="#How_to_Update" class="nav-link">How to Update</a></li>
+            <li><a href="#How_to_Uninstall" class="nav-link">How to Uninstall Node.js and NPM on Win 10</a></li>
+            <li><a href="#Basic_Node.js_Usage" class="nav-link">Basic Node.js Usage</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="How_to_Install">
+            <header>How to Install</header>
+            <article>
+                <p>Step 1: Download Node.js Installer</p>
+                <p>
+                    In a web browser, navigate to <a href="https://nodejs.org/en/download/" target="_blank">this download link</a>. 
+                    Click the Windows Installer button to download the latest default version. At the time this article was written, 
+                    version 10.16.0-x64 was the latest version. The Node.js installer includes the NPM package manager.
+                </p>
+                <p>Step 2: Install Node.js and NPM from Browser</p>
+                <ol>
+                    <li>
+                        Once the installer finishes downloading, launch it. Open the downloads link in your browser and click the file. 
+                        Or, browse to the location where you have saved the file and double-click it to launch.
+                    </li>
+                    <li>The system will ask if you want to run the software -> click Run.</li>
+                    <li>You will be welcomed to the Node.js Setup Wizard -> click Next.</li>
+                    <li>On the next screen, review the license agreement. Click Next if you agree to the terms and install the software.</li>
+                    <li>
+                        The installer will prompt you for the installation location. Leave the default location, 
+                        unless you have a specific need to install it somewhere else -> then click Next.
+                    </li>
+                    <li>
+                        The wizard will let you select components to include or remove from the installation. 
+                        Again, unless you have a specific need, accept the defaults by clicking Next.
+                    </li>
+                    <li>Finally, click the Install button to run the installer. When it finishes, click Finish.</li>
+                </ol>
+                <p>Step 3: Verify Installation</p>
+                <p>Open a command prompt (or PowerShell), and enter the following:</p>
+                <code>node -v</code>
+                <p>The system should display the Node.js version installed on your system. You can do the same for NPM:</p>
+                <code>npm -v</code>
+            </article>
+        </section>
+        <section class="main-section" id="How_to_Update">
+            <header>How to Update Node.js and NPM on Windows</header>
+            <article>
+                <p>
+                    The easiest way to update Node.js and NPM is to download the latest version of the software. 
+                    On the Node.js download page, right below the Windows Installer link, 
+                    it will display the latest version. You can compare this to the version you have installed.
+                </p>
+                <p>
+                    To upgrade, download the installer and run it. The setup wizard will overwrite the old version, 
+                    and replace it with the new version.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="How_to_Uninstall">
+            <header>How to Uninstall Node.js and NPM on Windows</header>
+            <article>
+                <p>You can uninstall Node.js from the Control Panel in Windows.</p>
+                <p>To do so:</p>
+                <ol>
+                    <li>Click the Start button > Settings (gear icon) >  Apps.</li>
+                    <li>Scroll down to find Node.js and click to highlight.</li>
+                    <li>Select Uninstall. This launches a wizard to uninstall the software.</li>
+                </ol>
+            </article>
+        </section>
+        <section class="main-section" id="Basic_Node.js_Usage">
+            <header>Basic Node.js Usage</header>
+            <p>
+                Node.js is a framework, which means that it doesn’t work as a normal application. 
+                Instead, it interprets commands that you write. 
+                To test your new Node.js installation, create a Hello World script.
+            </p>
+            <ol>
+                <li>Start by launching a text editor of your choice.</li>
+                <li>Next, copy and paste the following into the text editor you’ve just opened:</li>
+                <pre>
+                    <code>
+                        var http = require('http');
+                            http.createServer(function (req, res) {
+                                res.writeHead(200, {'Content-Type': 'text/html'});
+                                res.end('Hello World!');
+                        }).listen(8080);
+                    </code>
+                </pre>
+                <li>Save the file, then exit. Open the PowerShell, and enter the following:</li>
+                <pre>
+                    <code>
+                        node \users\<your_username>\myprogram.js
+                    </code>
+                </pre>
+                <p>
+                    It will look like nothing has happened. In reality, your script is running in the background.
+                    You may see a Windows Defender notice about allowing traffic – for now, click Allow.
+                </p>
+                <li>Next, open a web browser, and enter the following into the address bar:</li>
+                <code>http://localhost:8080</code>
+            </ol>
+            <p>In the very upper-left corner, you should see the text Hello World!</p>
+            <p>
+                Right now, your computer is acting like a server. Any other computer that tries to access your system 
+                on port 8080 will see the Hello World notice.
+            </p>
+            <p>
+                To turn off the program, switch back to PowerShell and press Ctrl+C. The system will switch back to a command prompt.
+                You can close this window whenever you are ready.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
